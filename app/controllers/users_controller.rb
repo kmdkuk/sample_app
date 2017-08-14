@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated?
     # debugger # ブレイクポイント作って鯖起動中のコンソールで現在の情報を確認できる。
   end
   
